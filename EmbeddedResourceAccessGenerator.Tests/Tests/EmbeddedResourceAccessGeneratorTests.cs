@@ -9,6 +9,14 @@ using Xunit;
 /// </summary>
 public class EmbeddedResourceAccessGeneratorTests
 {
+	[Theory]
+	[CombinatorialData]
+	public void AllEmbeddedResourcesAreAccessible(EmbeddedResource embeddedResource)
+	{
+		using var reader = embeddedResource.GetReader();
+		Assert.Equal("Success", reader.ReadToEnd());
+	}
+
 	[Fact]
 	public void TestTxtIsAccessible()
 	{
