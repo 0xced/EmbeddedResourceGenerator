@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -21,6 +21,7 @@
 		<EmbeddedResource Include="TestAssets\2InvalidChars-%3b.txt" />
 		<EmbeddedResource Include="TestAssets\Test With Spaces.txt" />
 		<EmbeddedResource Include="TestAssets\Test.txt" />
+		<EmbeddedResource Include="TestAssets\RenamedThroughLogicalName.txt" LogicalName="Renamed.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -30,11 +31,9 @@
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" PrivateAssets="all" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<!-- Update the property to include all EmbeddedResource files -->
-		<AdditionalFileItemNames>$(AdditionalFileItemNames);EmbeddedResource</AdditionalFileItemNames>
-	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\EmbeddedResourceAccessGenerator\EmbeddedResourceAccessGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
+	<Import Project="..\EmbeddedResourceAccessGenerator\build\Chorn.EmbeddedResourceAccessGenerator.props" />
+
 </Project>

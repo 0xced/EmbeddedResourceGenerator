@@ -3,4 +3,8 @@
 		<!-- Include all EmbeddedResource files as additional file names.-->
 		<AdditionalFileItemNames>$(AdditionalFileItemNames);EmbeddedResource</AdditionalFileItemNames>
 	</PropertyGroup>
+	<ItemGroup>
+		<CompilerVisibleProperty Include="RootNamespace" />
+		<CompilerVisibleItemMetadata Include="EmbeddedResource" MetadataName="LogicalName" />
+	</ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 ﻿namespace EmbeddedResourceAccessGenerator;
 
-internal record EmbeddedResourceItem(string RelativePath, string IdentifierName, string ResourceName)
+internal record EmbeddedResourceItem(string RootNamespace, string IdentifierName, string ResourceName)
 {
-	public string RelativePath { get; } = RelativePath;
+	public string RootNamespace { get; } = RootNamespace;
 	public string ResourceName { get; } = ResourceName;
 	public string IdentifierName { get; } = IdentifierName;
 }
